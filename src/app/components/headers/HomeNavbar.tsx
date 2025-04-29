@@ -53,7 +53,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
         <Stack className="menu ">
           <Box>
             <NavLink to="/">
-              <img className="brand-logo" src="/icons/burak.svg" />
+              <img className="brand-logo" src="/icons/pets.png" />
             </NavLink>
           </Box>
           <Stack className="links">
@@ -64,7 +64,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
             </Box>
             <Box className={"hover-line"}>
               <NavLink to="/products" activeClassName="underline">
-                Products
+                Pets
               </NavLink>
             </Box>
             {authMember ? (
@@ -102,7 +102,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
                   className="login-button"
                   onClick={() => setLoginOpen(true)}
                 >
-                  Login
+                  Join Us
                 </Button>
               </Box>
             ) : (
@@ -163,11 +163,11 @@ export default function HomeNavbar(props: HomeNavbarProps) {
         </Stack>
         <Stack className={"header-frame"}>
           <Stack className={"detail"}>
-            <Box className={"head-main-text"}>
-              World's Most Delicious Cousine
+            <Box className={"head-main-text"}>One more friend
             </Box>
-            <Box className={"wel-txt"}>The Choice, not just a choice</Box>
-            <Box className={"service-txt"}>24 hours service</Box>
+            <Box className={"wel-txt"}>Thousands more fun!
+            </Box>
+            <Box className={"service-txt"}>Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!</Box>
             <Box className={"signup"}>
               {!authMember ? (
                 <Button
