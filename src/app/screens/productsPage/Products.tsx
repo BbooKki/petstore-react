@@ -25,6 +25,7 @@ import { error } from "console";
 const actionDispatch = (dispatch: Dispatch) => ({
   setProducts: (data: Product[]) => dispatch(setProducts(data)), //Step 4: Redux Store ga malumotlarni joylash
 });
+
 const productsRetriever = createSelector(retrieveProducts, (products) => ({
   products,
 }));
@@ -42,7 +43,7 @@ export default function Products(props: ProductsProps) {
     page: 1,
     limit: 8,
     order: "createdAt",
-    productCollection: ProductCollection.DISH,
+    // productCollection: ProductCollection.DISH,
     search: "",
   });
   const [searchText, setSearchText] = useState<string>("");
@@ -184,71 +185,71 @@ export default function Products(props: ProductsProps) {
               <div className="category-main">
                 <Button
                   variant={"contained"}
-                  color={
-                    productSearch.productCollection === ProductCollection.DISH
-                      ? "primary"
-                      : "secondary"
-                  }
-                  onClick={() =>
-                    searchCollectionHandler(ProductCollection.DISH)
-                  }
+                  // // color={
+                  // //   // productSearch.productCollection === ProductCollection.DISH
+                  // //     ? "primary"
+                  // //     : "secondary"
+                  // // }
+                  // onClick={() =>
+                  //   // searchCollectionHandler(ProductCollection.DISH)
+                  // }
                 >
                   Dish
                 </Button>
 
                 <Button
                   variant={"contained"}
-                  color={
-                    productSearch.productCollection === ProductCollection.SALAD
-                      ? "primary"
-                      : "secondary"
-                  }
-                  onClick={() =>
-                    searchCollectionHandler(ProductCollection.SALAD)
-                  }
+                  // color={
+                  //   // productSearch.productCollection === ProductCollection.SALAD
+                  //     ? "primary"
+                  //     : "secondary"
+                  // }
+                  // onClick={() =>
+                  //   // searchCollectionHandler(ProductCollection.SALAD)
+                  // }
                 >
                   Salad
                 </Button>
 
                 <Button
                   variant={"contained"}
-                  color={
-                    productSearch.productCollection === ProductCollection.DRINK
-                      ? "primary"
-                      : "secondary"
-                  }
-                  onClick={() =>
-                    searchCollectionHandler(ProductCollection.DRINK)
-                  }
+                  // color={
+                  //   productSearch.productCollection === ProductCollection.DRINK
+                  //     ? "primary"
+                  //     : "secondary"
+                  // }
+                  // onClick={() =>
+                  //   searchCollectionHandler(ProductCollection.DRINK)
+                  // }
                 >
                   Drink
                 </Button>
 
                 <Button
                   variant={"contained"}
-                  color={
-                    productSearch.productCollection ===
-                    ProductCollection.DESSERT
-                      ? "primary"
-                      : "secondary"
-                  }
-                  onClick={() =>
-                    searchCollectionHandler(ProductCollection.DESSERT)
-                  }
+                  // color={
+                  //   productSearch.productCollection ===
+                  //   ProductCollection.DESSERT
+                  //     ? "primary"
+                  //     : "secondary"
+                  // }
+                  // onClick={() =>
+                  //   searchCollectionHandler(ProductCollection.DESSERT)
+                  // }
                 >
                   Dessert
                 </Button>
 
                 <Button
-                  variant={"contained"}
-                  color={
-                    productSearch.productCollection === ProductCollection.OTHER
-                      ? "primary"
-                      : "secondary"
-                  }
-                  onClick={() =>
-                    searchCollectionHandler(ProductCollection.OTHER)
-                  }
+                  // variant={"contained"}
+                  // color={
+                  //   productSearch.productCollection === ProductCollection.OTHER
+                  //     ? "primary"
+                  //     : "secondary"
+                  // }
+                  // onClick={() =>
+                  //   searchCollectionHandler(ProductCollection.OTHER)
+                  // }
                 >
                   Other
                 </Button>
@@ -259,10 +260,10 @@ export default function Products(props: ProductsProps) {
               {products.length !== 0 ? (
                 products.map((product: Product) => {
                   const imagePath = `${serverApi}/${product.productImages[0]}`;
-                  const sizeVolume =
-                    product.productCollection === ProductCollection.DISH
-                      ? product.productVolume + "liter"
-                      : product.productSize + " size";
+                  // const sizeVolume =
+                  //   product.productCollection === ProductCollection.DISH
+                  //     ? product.productVolume + "liter"
+                  //     : product.productSize + " size";
                   return (
                     <Stack
                       key={product._id}
@@ -273,7 +274,7 @@ export default function Products(props: ProductsProps) {
                         className="product-img"
                         sx={{ backgroundImage: `url(${imagePath})` }}
                       >
-                        <div className="product-sale">{sizeVolume}</div>
+                        <div className="product-sale">{ product.productCollection}</div>
                         <Button
                           className="shop-btn"
                           onClick={(e: React.MouseEvent<HTMLButtonElement>) => {

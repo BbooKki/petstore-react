@@ -37,7 +37,7 @@ export default function HomePage() {
         page: 1,
         limit: 4,
         order: "productViews",
-        productCollection: ProductCollection.DISH,
+        // productCollection: ProductCollection.BLACK,
       })
       .then((data) => {
         setPopularDishes(data);
@@ -47,9 +47,8 @@ export default function HomePage() {
     product
       .getProducts({
         page: 1,
-        limit: 4,
+        limit: 8,
         order: "createdAt",
-        // productCollection: ProductCollection.DISH, //it will show PC.DISH not fresh menu
       })
       .then((data) => {
         setNewDishes(data);
@@ -68,8 +67,9 @@ export default function HomePage() {
   return (
     <div className={"homepage"}>
       <Statistics />
-      <PopularDishes />
       <NewDishes />
+      <PopularDishes />
+      
       <Advertisement />
       <ActiveUsers />
       <Events />

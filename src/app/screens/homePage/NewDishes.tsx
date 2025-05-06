@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Container, Stack } from "@mui/material";
+import { Box, Container, Stack} from "@mui/material";
+import {Grid2 } from"@mui/material";
 import AspectRatio from "@mui/joy/AspectRatio";
 import { CssVarsProvider } from "@mui/joy/styles";
 import CardOverflow from "@mui/joy/CardOverflow";
@@ -13,7 +14,7 @@ import { createSelector } from "reselect";
 import { retrieveNewDishes } from "./selector";
 import { Product } from "../../../lib/types/product";
 import { serverApi } from "../../../lib/config";
-import { ProductSize, ProductVolume } from "../../../lib/enums/product.enum";
+import { ProductSize} from "../../../lib/enums/product.enum";
 
 /** REDUX SLICE & SELECTOR **/
 const newDishesRetriever = createSelector(retrieveNewDishes, (newDishes) => ({
@@ -29,54 +30,54 @@ export default function NewDishes() {
     <div className={"new-products-frame"}>
       <Container>
         <Stack className={"main"}>
-          <Box className={"category-title"}>Fresh Menu</Box>
+          <Box className={"category-title"}>New Members</Box>
           <Stack className={"cards-frame"}>
             <CssVarsProvider>
               {newDishes.length !== 0 ? (
-                newDishes.map((product: Product) => {
-                  const imagePath = `${serverApi}/${product.productImages[0]}`;
-                  const sizeVolume =
-                    product.productCollection === "DRINK"
-                      ? product.productVolume + "l"
-                      : product.productSize + " size";
-                  return (
-                    <Card
-                      key={product._id}
-                      variant="outlined"
-                      className={"card"}
-                    >
-                      <CardOverflow>
-                        <div className="product-sale">{sizeVolume}</div>
-                        <AspectRatio ratio={"1"}>
-                          <img src={imagePath} alt="" />
-                        </AspectRatio>
-                      </CardOverflow>
+                 <div className="product-wrapper">
+                    {newDishes.map((product: Product) => {
+                      const imagePath = `${serverApi}/${product.productImages[0]}`;
+                      return (
+                        <div key={product._id} className="product-card">
+                          <Card
+                            key={product._id}
+                            variant="outlined"
+                            className={"card"}
+                          >
+                            <CardOverflow>
+                              <div className="product-sale">{ product.productCollection}</div>
+                              <AspectRatio ratio={"1"} sx={{ padding: "5px", borderRadius: "10px" }}>
+                                <img src={imagePath} alt=""  />
+                              </AspectRatio>
+                            </CardOverflow>
 
-                      <CardOverflow variant="soft" className="product-detail">
-                        <Stack className="info">
-                          <Stack flexDirection={"row"}>
-                            <Typography className={"title"}>
-                              {product.productName}
-                            </Typography>
-                            <Divider width="2" height="24" bg="#d9d9d9" />
-                            <Typography className={"price"}>
-                              ${product.productPrice}
-                            </Typography>
-                          </Stack>
-                          <Stack>
-                            <Typography className={"views"}>
-                              {product.productViews}
-                              <VisibilityIcon
-                                sx={{ fontSize: 20, marginLeft: "5px" }}
-                              />
-                            </Typography>
-                          </Stack>
-                        </Stack>
-                      </CardOverflow>
-                    </Card>
-                  );
-                })
-              ) : (
+                            <CardOverflow variant="soft" className="product-detail">
+                              <Stack className="info">
+                                <Stack flexDirection={"column"} borderLeft={"1px solid "}>
+                                  <Typography className={"title"}>
+                                    {product.productName}
+                                  </Typography>
+                                  {/* <Divider width="1" height="24" bg="grey" /> */}
+                                  <Typography className={"price"}>
+                                  ₩{product.productPrice}
+                                  </Typography>
+                                </Stack>
+                                <Stack>
+                                  <Typography className={"views"}>
+                                    <VisibilityIcon
+                                      sx={{ fontSize: 20, marginRight: "3px" }}
+                                    />
+                                    {product.productViews}
+                                  </Typography>
+                                </Stack>
+                              </Stack>
+                            </CardOverflow>
+                          </Card>
+                        </div>
+                      );
+                    } )}
+                  </div>
+                ) : (
                 <Box className="no-data">New Prodcuts are not available!</Box>
               )}
             </CssVarsProvider>
