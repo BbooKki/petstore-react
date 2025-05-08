@@ -68,9 +68,8 @@ export default function HomePage() {
     <div className={"homepage"}>
       <Statistics />
       <NewDishes />
-      <PopularDishes />
-      
       <Advertisement />
+      <PopularDishes />
       <ActiveUsers />
       <Events />
     </div>

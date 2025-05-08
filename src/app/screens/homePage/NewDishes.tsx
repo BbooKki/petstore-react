@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Container, Stack} from "@mui/material";
+import { Box, Button, Container, Stack} from "@mui/material";
+import { Link } from "react-router-dom";
 import {Grid2 } from"@mui/material";
 import AspectRatio from "@mui/joy/AspectRatio";
 import { CssVarsProvider } from "@mui/joy/styles";
@@ -30,7 +31,13 @@ export default function NewDishes() {
     <div className={"new-products-frame"}>
       <Container>
         <Stack className={"main"}>
-          <Box className={"category-title"}>New Members</Box>
+          <Stack className={"category-title"} flexDirection={"row"}>
+            <Stack flexDirection={"column"}>
+              <Box className={"new-products-title"}>What's new?</Box>
+              <Typography className={"new-products-sub-title"}>Take A Look At Our New Pets!</Typography>
+            </Stack>
+            <Link to="/products" className="new-products-link">View More </Link>
+          </Stack>
           <Stack className={"cards-frame"}>
             <CssVarsProvider>
               {newDishes.length !== 0 ? (

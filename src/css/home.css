@@ -57,33 +57,67 @@
 }
 
 .homepage .main {
-  margin-top: 45px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+ 
 }
 
 .homepage .new-products-frame .category-title {
+  width: 100%;
   font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   color: #002a48;
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
   line-height: 43px;
+  display: flex;
+  justify-content: space-between;;
+}
+
+.homepage .new-products-frame .category-title .new-products-title{
+  color: #32383E;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.homepage .new-products-frame .category-title .new-products-sub-title{
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.homepage .new-products-frame .category-title .new-products-link{
+  color: #002a48;
+  text-decoration: none;
+  align-self: center;
+  border: 2px solid #002a48;
+  padding: 5px 30px 5px 30px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: normal
+}
+
+.homepage .new-products-frame .category-title .new-products-link:hover{
+  color: #f8f8ff;
+  background-color: #002a48;
 }
 
 .homepage .new-products-frame .main .cards-frame {
   width: 100%;
-  margin: 47px 2px 2px 2px;
+  margin-top: 20px;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .homepage .new-products-frame .main .card {
   /* height: 335px; */
-  width: 290px;
+  width: 295px;
   cursor: pointer;
   border: #00171f 1px solid;
+ 
 }
 
 .homepage .new-products-frame .product-sale {
@@ -112,7 +146,7 @@
   height: 60%;
   display: flex;
   justify-content: center;
-  margin-top: -12px;
+  margin-top: -15px;
   border-top: 1px solid;
   border-color: #f8f8ff;
   background-color: #fafbfb;
@@ -195,6 +229,7 @@
   line-height: normal;
   letter-spacing: 1.44px;
   color: #002a48;
+  
 }
 
 .homepage .popular-dishes-frame .popular-section .cards-frame {
