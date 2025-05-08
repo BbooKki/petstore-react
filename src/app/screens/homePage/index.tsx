@@ -1,13 +1,13 @@
 import Statistics from "./Statistics";
 import PopularDishes from "./PopularDishes";
-import NewDishes from "./NewDishes";
+import NewPets from "./NewPets";
 import Advertisement from "./Advertisement";
 import ActiveUsers from "./ActiveUsers";
 import Events from "./Events";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Dispatch } from "@reduxjs/toolkit";
-import { setNewDishes, setPopularDishes, setTopUsers } from "./slice";
+import { setNewPets, setPopularDishes, setTopUsers } from "./slice";
 import { Product } from "../../../lib/types/product";
 import ProductService from "../../services/ProductService";
 import { ProductCollection } from "../../../lib/enums/product.enum";
@@ -18,12 +18,12 @@ import "../../../css/home.css";
 /** REDUX SLICE & SELECTOR **/
 const actionDispatch = (dispatch: Dispatch) => ({
   setPopularDishes: (data: Product[]) => dispatch(setPopularDishes(data)),
-  setNewDishes: (data: Product[]) => dispatch(setNewDishes(data)),
+  setNewPets: (data: Product[]) => dispatch(setNewPets(data)),
   setTopUsers: (data: Member[]) => dispatch(setTopUsers(data)),
 }); //Action Dispatcher
 
 export default function HomePage() {
-  const { setPopularDishes, setNewDishes, setTopUsers } = actionDispatch(
+  const { setPopularDishes, setNewPets, setTopUsers } = actionDispatch(
     useDispatch()
   );
 
@@ -51,7 +51,7 @@ export default function HomePage() {
         order: "createdAt",
       })
       .then((data) => {
-        setNewDishes(data);
+        setNewPets(data);
       })
       .catch((err) => console.log(err));
 
@@ -67,7 +67,7 @@ export default function HomePage() {
   return (
     <div className={"homepage"}>
       <Statistics />
-      <NewDishes />
+      <NewPets />
       <Advertisement />
       <PopularDishes />
       <ActiveUsers />

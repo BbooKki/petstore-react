@@ -12,20 +12,20 @@ import Divider from "../../components/divider";
 
 import { useSelector } from "react-redux";
 import { createSelector } from "reselect";
-import { retrieveNewDishes } from "./selector";
+import { retrieveNewPets } from "./selector";
 import { Product } from "../../../lib/types/product";
 import { serverApi } from "../../../lib/config";
 import { ProductSize} from "../../../lib/enums/product.enum";
 
 /** REDUX SLICE & SELECTOR **/
-const newDishesRetriever = createSelector(retrieveNewDishes, (newDishes) => ({
-  newDishes,
+const newPetsRetriever = createSelector(retrieveNewPets, (newPets) => ({
+  newPets,
 })); //Selector
 
-export default function NewDishes() {
-  const { newDishes } = useSelector(newDishesRetriever);
+export default function NewPets() {
+  const { newPets } = useSelector(newPetsRetriever);
 
-  console.log("newDishes:", newDishes);
+  console.log("newPets:", newPets);
 
   return (
     <div className={"new-products-frame"}>
@@ -40,9 +40,9 @@ export default function NewDishes() {
           </Stack>
           <Stack className={"cards-frame"}>
             <CssVarsProvider>
-              {newDishes.length !== 0 ? (
+              {newPets.length !== 0 ? (
                  <div className="product-wrapper">
-                    {newDishes.map((product: Product) => {
+                    {newPets.map((product: Product) => {
                       const imagePath = `${serverApi}/${product.productImages[0]}`;
                       return (
                         <div key={product._id} className="product-card">

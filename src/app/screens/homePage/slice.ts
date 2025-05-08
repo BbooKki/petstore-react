@@ -3,7 +3,7 @@ import { HomePageState } from "../../../lib/types/screen";
 
 const initialState: HomePageState = {
   popularDishes: [],
-  newDishes: [],
+  newPets: [],
   topUsers: [],
 };
 
@@ -15,8 +15,8 @@ const homePageSlice = createSlice({
       //state: initial state
       state.popularDishes = action.payload;
     },
-    setNewDishes(state, action) {
-      state.newDishes = action.payload;
+    setNewPets(state, action) {
+      state.newPets = action.payload;
     },
     setTopUsers(state, action) {
       state.topUsers = action.payload;
@@ -24,7 +24,7 @@ const homePageSlice = createSlice({
   },
 });
 
-export const { setPopularDishes, setNewDishes, setTopUsers } =
+export const { setPopularDishes, setNewPets, setTopUsers } =
   homePageSlice.actions;
 
 const HomePageReducer = homePageSlice.reducer;
