@@ -70,8 +70,8 @@ export default function HomePage() {
       <NewPets />
       <Advertisement />
       <PopularDishes />
-      <ActiveUsers />
       <Events />
+      <ActiveUsers />
     </div>
   );
 }
