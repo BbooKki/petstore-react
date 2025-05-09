@@ -102,7 +102,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
                   className="login-button"
                   onClick={() => setLoginOpen(true)}
                 >
-                  Join Us
+                  LOGIN
                 </Button>
               </Box>
             ) : (

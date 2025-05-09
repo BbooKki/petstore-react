@@ -85,7 +85,7 @@ export default function NewPets() {
                     } )}
                   </div>
                 ) : (
-                <Box className="no-data">New Prodcuts are not available!</Box>
+                <Box className="no-data">New Members are not available!</Box>
               )}
             </CssVarsProvider>
           </Stack>

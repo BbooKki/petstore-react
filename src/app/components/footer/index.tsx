@@ -7,7 +7,7 @@ const Footers = styled.div`
   width: 100%;
   height: 590px;
   display: flex;
-  background:#FCEED5;
+  background: #FCEED5;
   background-size: cover;
 `;
 
@@ -20,24 +20,21 @@ export default function Footer() {
         <Stack flexDirection={"row"} sx={{ mt: "94px" }}>
           <Stack flexDirection={"column"} style={{ width: "340px" }}>
             <Box>
-              <img width={"100px"} src={"/icons/burak.svg"} />
+              <img width={"100px"} src={"/icons/pets.png"} />
             </Box>
             <Box className={"foot-desc-txt"}>
-              Focusing on the gourmet Turkish breakfast as well as the youth
-              society, CZN Burak Gurme aims to bring Turkish cuisine back. CZN
-              Burak Gurme creates an illusion with its cuisine.
+            Pets bring joy and companionship to our lives with their playful and loyal nature. Caring for a pet teaches responsibility and deepens our emotional connection to animals.
             </Box>
             <Box className="sns-context">
               <img src={"/icons/facebook.svg"} />
               <img src={"/icons/twitter.svg"} />
               <img src={"/icons/instagram.svg"} />
-              <img src={"/icons/youtube.svg"} />
             </Box>
           </Stack>
           <Stack sx={{ ml: "288px" }} flexDirection={"row"}>
             <Stack>
               <Box>
-                <Box className={"foot-category-title"}>Bo'limlar</Box>
+                <Box className={"foot-category-title"}>Quick Links</Box>
                 <Box className={"foot-category-link"}>
                   <Link to="/">Home</Link>
                   <Link to="/products">Products</Link>
@@ -57,7 +54,7 @@ export default function Footer() {
                 >
                   <Box flexDirection={"row"} className={"find-us"}>
                     <span>L.</span>
-                    <div>Downtown, Dubai</div>
+                    <div>Busan, Korea</div>
                   </Box>
                   <Box className={"find-us"}>
                     <span>P.</span>
@@ -65,7 +62,7 @@ export default function Footer() {
                   </Box>
                   <Box className={"find-us"}>
                     <span>E.</span>
-                    <div>devexuz@gmail.com</div>
+                    <div>petuz@gmail.com</div>
                   </Box>
                   <Box className={"find-us"}>
                     <span>H.</span>
@@ -77,11 +74,11 @@ export default function Footer() {
           </Stack>
         </Stack>
         <Stack
-          style={{ border: "1px solid #C5C8C9", width: "100%", opacity: "0.2" }}
+          style={{ border: "2px solid #002a48", width: "100%", opacity: "0.9" }}
           sx={{ mt: "80px" }}
         ></Stack>
         <Stack className={"copyright-txt"}>
-          © Copyright Devex Global, All rights reserved.
+          © Copyright Pet Global, All rights reserved.
         </Stack>
       </Container>
     </Footers>
