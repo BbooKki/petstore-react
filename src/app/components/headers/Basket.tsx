@@ -121,7 +121,7 @@ export default function Basket(props: BasketProps) {
                 <div>Cart Products!</div>
                 <DeleteForeverIcon
                   sx={{ ml: "5px", cursor: "pointer" }}
-                  color={"primary"}
+                  htmlColor="#FFFFFF"
                   onClick={() => onDeleteAll()}
                 />
               </Stack>
@@ -172,6 +172,7 @@ export default function Basket(props: BasketProps) {
                 onClick={proceedOrderHandlear}
                 startIcon={<ShoppingCartIcon />}
                 variant={"contained"}
+                className="order-button"
               >
                 Order
               </Button>

@@ -81,9 +81,9 @@
   align-items: center;
 }
 
-/* DISHES FILTER SECTION */
+/* PETS FILTER SECTION */
 
-.products-page .products .dishes-filter-section {
+.products-page .products .pets-filter-section {
   width: 100%;
   margin-top: 50px;
   display: flex;
@@ -91,7 +91,7 @@
   justify-content: flex-end;
 }
 
-.products-page .products .dishes-filter-section .order {
+.products-page .products .pets-filter-section .order {
   margin-right: 30px;
   width: 70px;
   height: 36.5px;

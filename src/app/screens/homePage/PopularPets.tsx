@@ -11,27 +11,27 @@ import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 
 import { useSelector } from "react-redux";
 import { createSelector } from "reselect";
-import { retrievePopularDishes } from "./selector";
+import { retrievePopularPets } from "./selector";
 import { Product } from "../../../lib/types/product";
 import { serverApi } from "../../../lib/config";
 
 /** REDUX SLICE & SELECTOR **/
-const popularDishesRetriever = createSelector(
-  retrievePopularDishes,
-  (popularDishes) => ({ popularDishes })
+const popularPetsRetriever = createSelector(
+  retrievePopularPets,
+  (popularPets) => ({ popularPets })
 );
 
-export default function PopularDishes() {
-  const { popularDishes } = useSelector(popularDishesRetriever);
+export default function PopularPets() {
+  const { popularPets } = useSelector(popularPetsRetriever);
 
   return (
-    <div className="popular-dishes-frame">
+    <div className="popular-pets-frame">
       <Container>
         <Stack className="popular-section">
           <Box className="category-title">Popular Members</Box>
           <Stack className="cards-frame">
-            {popularDishes.length !== 0 ? (
-              popularDishes.map((product: Product) => {
+            {popularPets.length !== 0 ? (
+              popularPets.map((product: Product) => {
                 const imagePath = `${serverApi}/${product.productImages[0]}`;
 
                 return (

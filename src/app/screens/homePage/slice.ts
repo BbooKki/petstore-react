@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { HomePageState } from "../../../lib/types/screen";
 
 const initialState: HomePageState = {
-  popularDishes: [],
+  popularPets: [],
   newPets: [],
   topUsers: [],
 };
@@ -11,9 +11,9 @@ const homePageSlice = createSlice({
   name: "homePage",
   initialState,
   reducers: {
-    setPopularDishes(state, action) {
+    setPopularPets(state, action) {
       //state: initial state
-      state.popularDishes = action.payload;
+      state.popularPets = action.payload;
     },
     setNewPets(state, action) {
       state.newPets = action.payload;
@@ -24,7 +24,7 @@ const homePageSlice = createSlice({
   },
 });
 
-export const { setPopularDishes, setNewPets, setTopUsers } =
+export const { setPopularPets, setNewPets, setTopUsers } =
   homePageSlice.actions;
 
 const HomePageReducer = homePageSlice.reducer;

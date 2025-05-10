@@ -7,7 +7,7 @@ import {
   MenuItem,
   Stack,
 } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Basket from "./Basket";
 import { CartItem } from "../../../lib/types/search";
 import { useGlobals } from "../../hooks/useGlobals";
@@ -50,7 +50,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
         <Stack className="menu ">
           <Box>
             <NavLink to="/">
-              <img className="brand-logo" src="/icons/burak.svg" />
+            <img className="brand-logo" src="/icons/pets.png" />
             </NavLink>
           </Box>
           <Stack className="links">
@@ -59,7 +59,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
             </Box>
             <Box className={"hover-line"}>
               <NavLink to="/products" activeClassName="underline">
-                Products
+                Pets
               </NavLink>
             </Box>
             {authMember ? (
@@ -107,7 +107,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
                   authMember?.memberImage
                     ? `${serverApi}/${authMember?.memberImage}`
                     : "/icons/default-user.svg"
-                }
+                } 
                 aria-haspopup={"true"}
                 onClick={handleLogoutClick}
               />
@@ -122,7 +122,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
                 elevation: 0,
                 sx: {
                   overflow: "visible",
-                  filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+                  filter: "drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.32))",
                   mt: 1.5,
                   "& .MuiAvatar-root": {
                     width: 32,
@@ -155,6 +155,14 @@ export default function OtherNavbar(props: OtherNavbarProps) {
               </MenuItem>
             </Menu>
           </Stack>
+        </Stack>
+        <Stack className="other-banner">
+              <Stack className="ads-img-frame" flexDirection={"column"}>
+                      <Box className="ads-title">One more friend</Box>
+                      <Box className="ads-sub-title">Thousands more fun!</Box>
+                      <Box className="ads-text">Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!</Box>
+                      {/* <Link to="/products" className="ads-button">Explore Now</Link> */}
+                    </Stack>
         </Stack>
       </Container>
     </div>

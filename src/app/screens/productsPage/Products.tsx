@@ -147,7 +147,7 @@ export default function Products(props: ProductsProps) {
             </Box>
           </Stack>
 
-          <Stack className={"dishes-filter-section"}>
+          <Stack className={"pets-filter-section"}>
             <Button
               variant={"contained"}
               className="order"
