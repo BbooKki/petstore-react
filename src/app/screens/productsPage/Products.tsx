@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProducts } from "./slice";
 import { Product, ProductInquiry } from "../../../lib/types/product";
 import ProductService from "../../services/ProductService";
-import { ProductCollection } from "../../../lib/enums/product.enum";
+import { ProductCollection, ProductGender } from "../../../lib/enums/product.enum";
 import { serverApi } from "../../../lib/config";
 import { useHistory } from "react-router-dom";
 import { CartItem } from "../../../lib/types/search";
@@ -41,7 +41,7 @@ export default function Products(props: ProductsProps) {
   const { products } = useSelector(productsRetriever); //Step 5: Redux Store dan malumotlarni olish selector yordamida
   const [productSearch, setProductSearch] = useState<ProductInquiry>({
     page: 1,
-    limit: 8,
+    limit: 12,
     order: "createdAt",
     // productCollection: ProductCollection.DISH,
     search: "",
@@ -111,7 +111,7 @@ export default function Products(props: ProductsProps) {
       <Container sx={{ width: 1300, marginBottom: "67px" }}>
         <Stack flexDirection={"column"} alignItems={"center"}>
           <Stack className={"avatar-big-box"}>
-            <Box className="text-title">Burak Restaurant</Box>
+            <Box className="text-title">Our Pets</Box>
             <Box className="search-box">
               <input
                 type="text"
@@ -184,17 +184,9 @@ export default function Products(props: ProductsProps) {
             <Stack className="product-category">
               <div className="category-main">
                 <Button
-                  variant={"contained"}
-                  // // color={
-                  // //   // productSearch.productCollection === ProductCollection.DISH
-                  // //     ? "primary"
-                  // //     : "secondary"
-                  // // }
-                  // onClick={() =>
-                  //   // searchCollectionHandler(ProductCollection.DISH)
-                  // }
+                 
                 >
-                  Dish
+                  Male
                 </Button>
 
                 <Button
@@ -208,9 +200,9 @@ export default function Products(props: ProductsProps) {
                   //   // searchCollectionHandler(ProductCollection.SALAD)
                   // }
                 >
-                  Salad
+                  Female
                 </Button>
-
+{/* 
                 <Button
                   variant={"contained"}
                   // color={
@@ -252,7 +244,7 @@ export default function Products(props: ProductsProps) {
                   // }
                 >
                   Other
-                </Button>
+                </Button> */}
               </div>
             </Stack>
 
@@ -274,7 +266,6 @@ export default function Products(props: ProductsProps) {
                         className="product-img"
                         sx={{ backgroundImage: `url(${imagePath})` }}
                       >
-                        <div className="product-sale">{ product.productCollection}</div>
                         <Button
                           className="shop-btn"
                           onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
@@ -307,15 +298,25 @@ export default function Products(props: ProductsProps) {
                           </Badge>
                         </Button>
                       </Stack>
-                      <Box className="product-desc">
-                        <span className="product-title">
-                          {product.productName}
-                        </span>
-                        <div className="product-price">
-                          <img src={"/icons/money.svg"} alt="" />
-                          {product.productPrice}
-                        </div>
-                      </Box>
+                      <Stack className="product-desc" flexDirection={"row"}>
+                        <Stack className="product-name">
+                          <span className="product-title">
+                            {product.productName}
+                          </span>
+                          <div className="product-price">
+                          ₩
+                            {product.productPrice}
+                          </div>
+                        </Stack>
+                        <Stack className="product-info" >
+                          <span className="product-color">
+                            Color: {product.productCollection}
+                          </span>
+                          <span className="product-gender">
+                            Gender: {product.productGender}
+                          </span>
+                        </Stack>
+                      </Stack>
                     </Stack>
                   );
                 })
@@ -349,32 +350,12 @@ export default function Products(props: ProductsProps) {
         </Stack>
       </Container>
 
-      <div className={"brands-logo"} style={{ minWidth: "1300px" }}>
-        <Container className={"family-brands"}>
-          <Box className={"category-title"}>Our Family Brands</Box>
-          <Stack className={"brand-list"}>
-            <Box className={"review-box"}>
-              <img src="/img/gurme.webp" alt="" />
-            </Box>
-            <Box className={"review-box"}>
-              <img src="/img/doner.webp" alt="" />
-            </Box>
-            <Box className={"review-box"}>
-              <img src="/img/seafood.webp" alt="" />
-            </Box>
-            <Box className={"review-box"}>
-              <img src="/img/sweets.webp" alt="" />
-            </Box>
-          </Stack>
-        </Container>
-      </div>
-
       <div className={"address"} style={{ minWidth: "1300px" }}>
         <Container>
-          <Stack className={"address-area"}>
+          <Stack className={"address-area"} >
             <Box className="address-title">Our address</Box>
             <iframe
-              style={{ marginTop: "60px" }}
+              style={{ marginTop: "60px", borderRadius: "10px" }}
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093747!2d144.9537353153166!3d-37.816279742021665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d2e7d30c3f5a!2sFlinders%20St%2C%20Melbourne%20VIC%203000%2C%20Australia!5e0!3m2!1sen!2sus!4v1633023222539!5m2!1sen!2sus"
               height={500}
               referrerPolicy="no-referrer-when-downgrade"

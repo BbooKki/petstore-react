@@ -28,11 +28,12 @@
 
 .products-page .products .text-title {
   position: relative;
-  font-family: "Dancing Script";
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 50px;
   width: auto;
+  color: #002a48;
 }
 
 .products-page .products .search-box {
@@ -54,7 +55,7 @@
 
 .products-page .products .search-box .input-text-field::placeholder {
   color: #4a4a4a;
-  font-family: Quicksand;
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -125,99 +126,54 @@
 }
 
 .products-page .products .product-wrapper {
-  margin-left: 22px;
+  /* margin-left: 22px; */
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .products .product-wrapper .no-data {
   width: 100%;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-transform: capitalize;
-  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 30px;
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   line-height: 34px;
-  color: #e3c08d;
+  color: #002a48;
+  
 }
 
 /* PRODUCTS CARD SECTION */
 
 .products-page .products .product-card {
-  margin-top: 40px;
-  margin-right: 24px;
-  width: 270px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-top: 20px;
+  width: auto;
+  padding: 5px;
+  cursor: pointer;
+  border: #00171f 1px solid;
+  border-radius: 10px;
 }
 
 .products-page .products .product-card .product-img {
   position: relative;
-  width: 273px;
-  height: 275px;
+  width: 264px;
+  height: 300px;
   background-size: cover;
-  border-radius: 0px 50px 0px 0px;
-}
-
-.products-page .products .product-img .product-sale {
-  margin: 10px;
-  width: 90px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #ff9200;
-  box-shadow: 4px 6px 20px #0000001a;
-  border-radius: 25px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 21px;
-  color: #f8f8ff;
-}
-
-.products-page .products .product-desc {
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: "Poppins", sans-serif;
-}
-
-.products-page .products .product-desc .product-title {
-  margin-top: 10px;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 30px;
-  font-family: "Poppins", sans-serif;
-}
-
-.products-page .products .product-desc .product-price {
-  width: 61px;
-  height: 36px;
-  color: #e3c08d;
-  font-family: "Poppins", sans-serif;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 10px;
+  background-position: center center;
+  background-repeat: no-repeat; 
 }
 
 .products-page .products .product-img:before {
-  border-radius: 0px 50px 0px 0px;
+  border-radius: 10px;
   content: "";
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -231,8 +187,56 @@
 }
 
 .products-page .products .product-img:hover:before {
-  border-radius: 0px 50px 0px 0px;
+  border-radius: 10px;
   opacity: 1;
+}
+
+.products-page .products .product-desc {
+  width: auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-top: 1px solid;
+  border-color: #f8f8ff;
+  background-color: #fafbfb;
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #00171F;
+}
+
+.products-page .products .product-desc .product-name{
+  border-left: 2px solid #002a48;
+}
+
+.products-page .products .product-desc .product-title {
+  color: #00171f;
+  font-weight: 500;
+  margin-left: 10px;
+  white-space: nowrap;      
+  overflow: hidden;          
+  text-overflow: ellipsis;   
+  max-width: 90%;           
+}
+
+.products-page .products .product-desc .product-price {
+  color: #00171f;
+  margin-left: 15px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.products-page .products .product-desc .product-info{
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: normal;
+  color: #667479;
+  justify-content: space-around;
+}
+
+.products-page .products .product-desc .product-info .product-gender{
+  text-transform: capitalize;
 }
 
 .products-page .products .product-img img {
@@ -260,7 +264,7 @@
   background: rgb(198 0 255 / 66%);
   border: 2px solid #d7b686;
   border-radius: 10px;
-  font-family: "Poppins";
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 10px;
@@ -312,7 +316,7 @@
 
 .products-page .products .brands-logo .family-brands .category-title {
   color: #e3c08d;
-  font-family: Roboto;
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
@@ -352,7 +356,7 @@
 
 .products-page .products .brands-logo .review-desc {
   margin-top: 10px;
-  font-family: "DM sans";
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -374,21 +378,23 @@
   margin-bottom: 60px;
   height: auto;
   background: #f8f8ff;
+ 
 }
 
 .products-page .products .address .address-area {
   width: 100%;
-  margin-top: 60px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
+  
 }
 
 .products-page .products .address .address-area .address-title {
-  color: #343434;
-  font-family: "Roboto Serif";
+  color: #002a48;
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 36px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   line-height: normal;
   display: flex;
   justify-content: center;
@@ -465,7 +471,7 @@
 }
 
 .products-page .chosen-product .info-box .product-name {
-  font-family: "Poppins";
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 30px;
@@ -475,7 +481,7 @@
 
 .products-page .chosen-product .chosen-product-info .info-box .resto-name {
   margin-top: 16px;
-  font-family: "Poppins";
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 17px;
@@ -518,7 +524,7 @@
   height: 112px;
   margin-top: 30px;
   margin-bottom: 30px;
-  font-family: "Poppins";
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -538,7 +544,7 @@
 }
 
 .products-page .chosen-product .product-price span {
-  font-family: "Poppins";
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 25px;
@@ -557,7 +563,7 @@
 .products-page .chosen-product .button-box button {
   width: 230px;
   height: 44px;
-  font-family: "Poppins";
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
@@ -566,7 +572,7 @@
 }
 
 .products-page .chosen-product .title {
-  font-family: "Dancing Script";
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 36px;

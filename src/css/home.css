@@ -49,7 +49,6 @@
 /* NEW PRODUCTS */
 
 .homepage .new-products-frame {
-
   width: 100%;
   background: #f8f8ff;
   display: flex;
@@ -61,7 +60,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
- 
 }
 
 .homepage .new-products-frame .category-title {
@@ -117,7 +115,6 @@
   width: 295px;
   cursor: pointer;
   border: #00171f 1px solid;
- 
 }
 
 .homepage .new-products-frame .product-sale {
@@ -161,6 +158,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+ 
 }
 
 .homepage .new-products-frame .product-detail .title {
@@ -175,12 +173,6 @@
   margin-left: 15px;
   font-weight: 500;
   font-size: 14px;
-}
-
-.homepage .new-products-frame .product-detail .divider {
-  margin: 0 10px 0 10px;
-  width: 2px;
-  background-color: #002a48;;
 }
 
 .homepage .new-products-frame .product-detail .views {
