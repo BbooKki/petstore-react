@@ -43,18 +43,17 @@ export default function Products(props: ProductsProps) {
     page: 1,
     limit: 12,
     order: "createdAt",
-    // productCollection: ProductCollection.DISH,
     search: "",
   });
   const [searchText, setSearchText] = useState<string>("");
   const history = useHistory();
 
   useEffect(() => {
+    console.log("productSearch:", productSearch); 
     const product = new ProductService(); //Step 1: Backend server data fetch
     product
       .getProducts(
         //Step 2: getProduct method orqali data yig'ib olish
-
         productSearch
       )
       .then((data) => {
@@ -82,6 +81,16 @@ export default function Products(props: ProductsProps) {
     productSearch.page = 1;
     productSearch.productCollection = collection;
     setProductSearch({ ...productSearch }); //productSearch obj qiymatlaridan foydalanib yangi reference object hosil etiladi
+  };
+
+  const searchGenderHandler = (gender: ProductGender) => {
+    productSearch.page = 1;
+    if (productSearch.productGender === gender) {
+      delete productSearch.productGender;
+    } else {
+      productSearch.productGender = gender;
+    }
+    setProductSearch({ ...productSearch });
   };
 
   const searchOrderHandler = (order: string) => {
@@ -184,21 +193,29 @@ export default function Products(props: ProductsProps) {
             <Stack className="product-category">
               <div className="category-main">
                 <Button
-                 
+                  variant={"contained"}
+                  color={
+                    productSearch.productGender === ProductGender.MALE
+                      ? "primary"
+                      : "secondary"
+                  }
+                  onClick={() =>
+                    searchGenderHandler(ProductGender.MALE)
+                  }   
                 >
                   Male
                 </Button>
 
                 <Button
                   variant={"contained"}
-                  // color={
-                  //   // productSearch.productCollection === ProductCollection.SALAD
-                  //     ? "primary"
-                  //     : "secondary"
-                  // }
-                  // onClick={() =>
-                  //   // searchCollectionHandler(ProductCollection.SALAD)
-                  // }
+                  color={
+                    productSearch.productGender === ProductGender.FEMALE
+                      ? "primary"
+                      : "secondary"
+                  }
+                  onClick={() =>
+                    searchGenderHandler(ProductGender.FEMALE)
+                  }
                 >
                   Female
                 </Button>

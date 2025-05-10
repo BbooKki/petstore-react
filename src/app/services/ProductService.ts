@@ -12,14 +12,27 @@ class ProductService {
   public async getProducts(input: ProductInquiry): Promise<Product[]> {
     try {
       let url = `${this.path}/product/all?order=${input.order}&page=${input.page}&limit=${input.limit}`;
+      if (input.productGender) {url += `&productGender=${input.productGender}`;}
       if (input.productCollection)
         url += `&productCollection=${input.productCollection}`;
       if (input.search) url += `&search=${input.search}`;
 
-      const result = await axios.get(url);
-      console.log("getProducts:", result);
+      
 
-      return result.data;
+      const result = await axios.get(url);
+      console.log("getProducts Test:", result);
+
+      const filteredProducts = result.data.filter((product: Product) => {
+        if (input.productGender) {
+          return product.productGender === input.productGender;
+        }
+
+
+        return true;
+      });
+  
+
+      return filteredProducts;
     } catch (err) {
       console.log("Error, getProduct:", err);
       throw err;
