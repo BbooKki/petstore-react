@@ -117,8 +117,8 @@ export default function OrdersPage() {
                 <div className={"order-user-icon-box"}>
                   <img
                     src={
-                      authMember?.memberType === "RESTAURANT"
-                        ? "/icons/restaurant.svg"
+                      authMember?.memberType === "PETSTORE"
+                        ? "/icons/dog.png"
                         : "/icons/user-badge.svg"
                     }
                     className={"order-user-prof-img"}
@@ -130,7 +130,7 @@ export default function OrdersPage() {
                 <p className="order-user-prof">{authMember?.memberType}</p>
               </div>
               <div className="liner"></div>
-              <div className="order-user-address">
+              {/* <div className="order-user-address">
                 <img
                   src="/icons/location.svg"
                   className="order-user-location-icon"
@@ -140,7 +140,7 @@ export default function OrdersPage() {
                     ? authMember.memberAddress
                     : "Do not exist"}
                 </p>
-              </div>
+              </div> */}
             </Box>
           </Box>
           <Box className={"order-info-box"}>

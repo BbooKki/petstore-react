@@ -294,7 +294,7 @@ export default function Products(props: ProductsProps) {
                         <Button className="view-btn" sx={{ right: "36px" }}>
                           <Badge
                             badgeContent={product.productViews}
-                            color="secondary"
+                            color="primary"
                           >
                             <RemoveRedEyeIcon
                               sx={{

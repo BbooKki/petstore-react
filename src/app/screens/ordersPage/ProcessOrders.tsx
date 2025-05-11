@@ -116,7 +116,7 @@ export default function ProcessOrders(props: ProcessOrdersProps) {
                   variant="contained"
                   className="verify-button"
                 >
-                  Verify to Fullfil
+                  Verify
                 </Button>
               </Box>
             </Box>

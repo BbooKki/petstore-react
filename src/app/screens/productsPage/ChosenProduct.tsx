@@ -105,7 +105,6 @@ export default function ChosenProduct(props: ChosenProductProps) {
             <span className={"resto-name"}>{restaurant?.memberNick}</span>
             <span className={"resto-name"}>{restaurant?.memberPhone}</span>
             <Box className={"rating-box"}>
-              <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
               <div className={"evaluation-box"}>
                 <div className={"product-view"}>
                   <RemoveRedEyeIcon sx={{ mr: "10px" }} />
@@ -113,11 +112,14 @@ export default function ChosenProduct(props: ChosenProductProps) {
                 </div>
               </div>
             </Box>
+            
             <p className={"product-desc"}>
               {chosenProduct?.productDesc
                 ? chosenProduct?.productDesc
                 : "No Descrtiption"}
             </p>
+            <span>{chosenProduct?.productCollection}</span>
+            <span>{chosenProduct?.productGender}</span>
             <Divider height="1" width="100%" bg="#000000" />
             <div className={"product-price"}>
               <span>Price:</span>

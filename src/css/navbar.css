@@ -324,6 +324,8 @@ margin-top: 55px;
   height: 60px;
   filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
   border-radius: 29px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .basket-info-box .product-name {
@@ -443,9 +445,8 @@ margin-top: 55px;
 }
 
 .other-navbar .navbar-container .other-banner .ads-img-frame{
-  margin-top: 50px;
   width: 100%;
-  height: 350px;
+  height: 400px;
   display: flex;
   overflow: hidden;
   background-size: cover;

@@ -63,7 +63,7 @@ export default function PausedOrders(props: PausedOrderProps) {
         orderStatus: OrderStatus.PROCESS,
       };
 
-      const confirmation = window.confirm("Do you want to delete the order?");
+      const confirmation = window.confirm("Do you want to process the order?");
       if (confirmation) {
         const order = new OrderService();
         await order.updateOrder(input);
