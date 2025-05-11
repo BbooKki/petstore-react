@@ -80,7 +80,7 @@ export default function Products(props: ProductsProps) {
   const searchCollectionHandler = (collection: ProductCollection) => {
     productSearch.page = 1;
     productSearch.productCollection = collection;
-    setProductSearch({ ...productSearch }); //productSearch obj qiymatlaridan foydalanib yangi reference object hosil etiladi
+    setProductSearch({ ...productSearch }); 
   };
 
   const searchGenderHandler = (gender: ProductGender) => {
@@ -141,6 +141,7 @@ export default function Products(props: ProductsProps) {
                     right: "110px", // Adjust position based on button width
                     cursor: "pointer",
                     color: "gray",
+                    
                   }}
                 />
               )}
@@ -187,10 +188,41 @@ export default function Products(props: ProductsProps) {
             >
               Views
             </Button>
+            <Stack flexDirection={"row"} className="gender-filter">
+            <Button
+                  variant={"contained"}
+                  className={"order-male"}
+                  color={
+                    productSearch.productGender === ProductGender.MALE
+                      ? "primary"
+                      : "secondary"
+                  }
+                  onClick={() =>
+                    searchGenderHandler(ProductGender.MALE)
+                  }   
+                >
+                  Male
+                </Button>
+                <Button
+                  variant={"contained"}
+                  className={"order-female"}
+                  color={
+                    productSearch.productGender === ProductGender.FEMALE
+                      ? "primary"
+                      : "secondary"
+                  }
+                  onClick={() =>
+                    searchGenderHandler(ProductGender.FEMALE)
+                  }
+                >
+                  Female
+                </Button>
+            </Stack>
+            
           </Stack>
 
           <Stack className={"list-category-section"}>
-            <Stack className="product-category">
+            {/* <Stack className="product-category">
               <div className="category-main">
                 <Button
                   variant={"contained"}
@@ -219,51 +251,8 @@ export default function Products(props: ProductsProps) {
                 >
                   Female
                 </Button>
-{/* 
-                <Button
-                  variant={"contained"}
-                  // color={
-                  //   productSearch.productCollection === ProductCollection.DRINK
-                  //     ? "primary"
-                  //     : "secondary"
-                  // }
-                  // onClick={() =>
-                  //   searchCollectionHandler(ProductCollection.DRINK)
-                  // }
-                >
-                  Drink
-                </Button>
-
-                <Button
-                  variant={"contained"}
-                  // color={
-                  //   productSearch.productCollection ===
-                  //   ProductCollection.DESSERT
-                  //     ? "primary"
-                  //     : "secondary"
-                  // }
-                  // onClick={() =>
-                  //   searchCollectionHandler(ProductCollection.DESSERT)
-                  // }
-                >
-                  Dessert
-                </Button>
-
-                <Button
-                  // variant={"contained"}
-                  // color={
-                  //   productSearch.productCollection === ProductCollection.OTHER
-                  //     ? "primary"
-                  //     : "secondary"
-                  // }
-                  // onClick={() =>
-                  //   searchCollectionHandler(ProductCollection.OTHER)
-                  // }
-                >
-                  Other
-                </Button> */}
               </div>
-            </Stack>
+            </Stack> */}
 
             <Stack className="product-wrapper">
               {products.length !== 0 ? (
