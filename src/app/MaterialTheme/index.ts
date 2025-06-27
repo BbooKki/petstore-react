@@ -1,10 +1,7 @@
-import React from "react";
 import { createTheme } from "@mui/material/styles";
 import { common } from "@mui/material/colors";
 import shadow from "./shadow";
 import typography from "./typography";
-import { maxWidth } from "@mui/system";
-import { BrowserRouter as Router } from "react-router-dom";
 
 /**
  * LIGHT THEME (DEFAULT)

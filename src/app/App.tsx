@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Switch, useLocation, useHistory } from "react-router-dom"; //useHistory is for logout set by myself
+import { Route, Switch, useLocation } from "react-router-dom"; //useHistory is for logout set by myself
 import HomePage from "./screens/homePage";
 import ProductsPage from "./screens/productsPage";
 import OrdersPage from "./screens/ordersPage";

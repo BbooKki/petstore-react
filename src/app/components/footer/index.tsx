@@ -7,7 +7,7 @@ const Footers = styled.div`
   width: 100%;
   height: 590px;
   display: flex;
-  background: #FCEED5;
+  background: #fceed5;
   background-size: cover;
 `;
 
@@ -23,7 +23,9 @@ export default function Footer() {
               <img width={"100px"} src={"/icons/pets.png"} />
             </Box>
             <Box className={"foot-desc-txt"}>
-            Pets bring joy and companionship to our lives with their playful and loyal nature. Caring for a pet teaches responsibility and deepens our emotional connection to animals.
+              Pets bring joy and companionship to our lives with their playful
+              and loyal nature. Caring for a pet teaches responsibility and
+              deepens our emotional connection to animals.
             </Box>
             <Box className="sns-context">
               <img src={"/icons/facebook.svg"} />
