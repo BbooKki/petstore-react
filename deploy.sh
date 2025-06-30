@@ -1,4 +1,6 @@
 #!/bin/bash
+source ~/.nvm/nvm.sh
+nvm use 18
 
 # PRODUCTION
 git reset --hard 
